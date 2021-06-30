@@ -5,10 +5,10 @@ const express = require("express");
 const app = express();
 
 // 라우팅
-const home = require("./routes/home");
+const home = require("./src/routes/home");
 
 // 앱 셋팅
-app.set("views", "./views");    //뷰 폴더 지정 render 사용시 뷰 경로 지정 안해도 됨
+app.set("views", "./src/views");    //뷰 폴더 지정 render 사용시 뷰 경로 지정 안해도 됨
 app.set("view engine", "ejs");  //view engine을 ejs로 사용
 
 
