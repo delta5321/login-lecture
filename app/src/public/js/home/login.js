@@ -24,5 +24,14 @@ function login(){
         body : JSON.stringify(req),
     })
     .then((res) => res.json())  // json()으로 Response의 스트림을 완전한 형태로 읽는것( Promise 형태)
-    .then(console.log); //Promise 내부를 까보는것
+    .then((res) => {
+        if (res.success) {
+            location.href = "/";    // /로 이동
+        } else {
+            alert(res.msg);
+        }
+    }) //Promise 내부를 까보는것
+    .catch((err) => {
+        console.err(new Error("로그인 중 에러 발생"));
+    });
 }

@@ -2,8 +2,8 @@
 
 
 const users ={
-    id : ["woorimtIT", "나개발", "김팀장"],
-    psword : ["1234", "1234", "123456"],
+    id : ["woorimtIT", "나개발", "김팀장", "test"],
+    psword : ["1234", "1234", "123456", "1234"],
 };
 
 const output ={
@@ -20,6 +20,8 @@ const process = {
         const id = req.body.id;
         const psword = req.body.psword;
         console.log(id,psword)
+        console.log(users.id.includes(id))
+        console.log(users.id.indexOf(id))
         if (users.id.includes(id)){
             const idx = users.id.indexOf(id);
             if(users.psword[idx] === psword){
