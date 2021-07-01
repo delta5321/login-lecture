@@ -1,6 +1,6 @@
 "use strict";
 
-const { application } = require("express");
+// const { application } = require("express");
 
 //선택자를 통해 데이터를 받아오기
 const id = document.querySelector("#id"),
@@ -15,12 +15,14 @@ function login(){
         psword : psword.value,
     };
 
-
+// 브라우저에 입력한 아이디와 패스워드를 서버로 전송
     fetch("/login", {
         method : "POST",
-        header : {
+        headers : {
             "Content-type" : "application/json" // JSON 형태의 파일이라는 것을 명시적으로 알려줌
         },
         body : JSON.stringify(req),
-    });
+    })
+    .then((res) => res.json())  // json()으로 Response의 스트림을 완전한 형태로 읽는것( Promise 형태)
+    .then(console.log); //Promise 내부를 까보는것
 }
