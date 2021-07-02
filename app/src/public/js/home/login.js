@@ -27,11 +27,12 @@ function login(){
     .then((res) => {
         if (res.success) {
             location.href = "/";    // /로 이동
+            alert(res.id)
         } else {
             alert(res.msg);
         }
     }) //Promise 내부를 까보는것
     .catch((err) => {
-        console.err(new Error("로그인 중 에러 발생"));
+        console.error(new Error("로그인 중 에러 발생"));
     });
 }
