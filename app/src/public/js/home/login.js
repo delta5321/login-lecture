@@ -1,7 +1,5 @@
 "use strict";
 
-// const { application } = require("express");
-
 //선택자를 통해 데이터를 받아오기
 const id = document.querySelector("#id"),
 psword = document.querySelector("#psword"),
@@ -27,12 +25,12 @@ function login(){
     .then((res) => {
         if (res.success) {
             location.href = "/";    // /로 이동
-            alert(res.id)
+            alert(res.body.id)
         } else {
             alert(res.msg);
         }
     }) //Promise 내부를 까보는것
     .catch((err) => {
-        console.error(new Error("로그인 중 에러 발생"));
+        console.error("로그인 중 에러 발생");
     });
 }
